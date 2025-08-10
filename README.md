@@ -1,9 +1,9 @@
-
+#Jarvis Ai
 <p align="center">
   <img src="assets/jarvis-icon.png" width="200" alt="Jarvis Logo">
 </p>
 
-#<h1 align="center">🤖 Jarvis</h1>
+<h1 align="center">🤖 Jarvis</h1>
 
 <p align="center">
   Multi‑account AI voice assistant for <strong>phone + laptop</strong>.<br>
