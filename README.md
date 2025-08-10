@@ -1,4 +1,3 @@
-<p>##Jarvis</p>
 
 <p align="center">
   <img src="assets/jarvis-icon.png" width="200" alt="Jarvis Logo">
