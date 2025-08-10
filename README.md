@@ -1,48 +1,73 @@
+# Welcome to your Lovable project
 
-<p align="center">
-  <img src="public/jarvis-icon.png" width="200" alt="Jarvis Logo">
-</p>
+## Project info
 
-<h1 align="center">🤖 Jarvis</h1>
+**URL**: https://lovable.dev/projects/041dea48-fc69-4032-bb3b-9cba4a13e0d0
 
-<p align="center">
-  Multi‑account AI voice assistant for <strong>phone + laptop</strong>.<br>
-  Call, message, and control devices using just your voice.<br>
-  <em>Private. Ad‑free. Yours.</em>
-</p>
+## How can I edit this code?
 
----
+There are several ways of editing your application.
 
-## ✨ Features
+**Use Lovable**
 
-- 📞 **Cross-device calling** — e.g. "Call from Mom's phone to Dad"
-- 🎙 **Voice recognition** — identifies each family member
-- 👨‍👩‍👦 **Multi-account support** — Mom, Dad, Grandpa, Grandma, You
-- 📱 **Phone control** — make calls, send SMS/WhatsApp
-- 💻 **Laptop control** — open apps, run commands
-- ☁ **Works online** via free cloud server
-- 🔒 **Private & ad-free** — your data stays with you
+Simply visit the [Lovable Project](https://lovable.dev/projects/041dea48-fc69-4032-bb3b-9cba4a13e0d0) and start prompting.
 
----
+Changes made via Lovable will be committed automatically to this repo.
 
-## 🛠 How It Works
+**Use your preferred IDE**
 
-1. **Wake word detection**: Say `"Hey Jarvis"`
-2. **Voiceprint authentication**: Recognizes who you are
-3. **Command processing**: Example → "Call Balaji Dad"
-4. **Device routing**: Sends command to correct phone/laptop
-5. **Action execution**: Call starts automatically
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
----
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-## 📦 Installation
+Follow these steps:
 
-### 1. Server (Free Cloud)
-- Deploy to [Render.com](https://render.com) free tier
-- Follow the `server/` setup guide
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-### 2. Desktop App
-```bash
-cd desktop_app
-pip install -r requirements.txt
-python jarvis_desktop.py
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
+
+**Edit a file directly in GitHub**
+
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
+
+**Use GitHub Codespaces**
+
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/041dea48-fc69-4032-bb3b-9cba4a13e0d0) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
