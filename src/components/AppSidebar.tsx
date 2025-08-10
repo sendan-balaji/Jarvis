@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Sidebar,
@@ -6,43 +5,32 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarFooter,
-  SidebarInput,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { 
-  MessageSquareText, 
-  PlusCircle, 
-  User, 
-  Library, 
-  Search,
-  Edit,
-  Grid3X3
-} from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Grid3X3, Search, Edit } from "lucide-react";
 import { useJarvis } from "@/jarvis/JarvisProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const navigationItems = [
-  { icon: MessageSquareText, label: "New chat", action: "newChat" },
-  { icon: Library, label: "Library", action: "library" },
-  { icon: Grid3X3, label: "GPTs", action: "gpts" },
-  { icon: MessageSquareText, label: "Chats", action: "chats" },
+  { icon: Grid3X3, label: "Dev Mode", action: "devmode" },
 ];
 
 export default function AppSidebar() {
   const { state, setState, startNewChat } = useJarvis();
+  const navigate = useNavigate();
 
   const handleNavigation = (action: string) => {
     switch (action) {
       case "newChat":
         startNewChat();
         break;
+      case "devmode":
+        navigate("/devmode");
+        break;
       default:
-        // Handle other navigation actions
         break;
     }
   };
@@ -59,7 +47,7 @@ export default function AppSidebar() {
             <Edit className="h-4 w-4" />
           </Button>
         </div>
-        
+
         <div className="space-y-1">
           {navigationItems.map((item, index) => (
             <Button
@@ -105,27 +93,20 @@ export default function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter className="p-4">
--        <div className="flex items-center gap-3 p-2 rounded-lg border bg-background hover:bg-muted/50 cursor-pointer">
--          <Avatar className="h-8 w-8">
--            <AvatarFallback>U</AvatarFallback>
--          </Avatar>
--          <div className="flex-1 min-w-0">
--            <div className="text-sm font-medium">User</div>
--            <div className="text-xs text-muted-foreground">Free Plan</div>
--          </div>
--          <ThemeToggle />
--        </div>
-+        <Link to="/user" className="flex items-center gap-3 p-2 rounded-lg border bg-background hover:bg-muted/50 transition-colors">
-+          <Avatar className="h-8 w-8">
-+            <AvatarFallback>U</AvatarFallback>
-+          </Avatar>
-+          <div className="flex-1 min-w-0">
-+            <div className="text-sm font-medium">User</div>
-+            <div className="text-xs text-muted-foreground">Free Plan</div>
-+          </div>
-+          <ThemeToggle />
-+        </Link>
-       </SidebarFooter>
+        <Link
+          to="/user"
+          className="flex items-center gap-3 p-2 rounded-lg border bg-background hover:bg-muted/50 transition-colors"
+        >
+          <Avatar className="h-8 w-8">
+            <AvatarFallback>U</AvatarFallback>
+          </Avatar>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-medium">User</div>
+            <div className="text-xs text-muted-foreground">Free Plan</div>
+          </div>
+          <ThemeToggle />
+        </Link>
+      </SidebarFooter>
     </Sidebar>
   );
 }
