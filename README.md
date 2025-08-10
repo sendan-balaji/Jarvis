@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/jarvis-icon.png" width="200" alt="Jarvis Logo">
+  <img src="public/jarvis-icon.png" width="200" alt="Jarvis Logo">
 </p>
 
 <h1 align="center">🤖 Jarvis</h1>
