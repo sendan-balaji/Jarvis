@@ -13,7 +13,6 @@ export default function FloatingActionButton({ onAction, canSend }: { onAction: 
           { key: "attach", icon: Paperclip, label: "Attach" },
           { key: "camera", icon: Camera, label: "Camera" },
           { key: "gallery", icon: ImageIcon, label: "Gallery" },
-          { key: "live", icon: Radio, label: "Live" },
         ] as const)
   ), [canSend]);
 
