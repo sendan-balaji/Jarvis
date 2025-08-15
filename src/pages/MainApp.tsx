@@ -25,6 +25,8 @@ function PreviewPanel() {
 }
 
 export default function MainApp() {
+  const [activeTab, setActiveTab] = React.useState<"chat" | "preview">("chat");
+
   React.useEffect(() => {
     document.title = "AI Builder";
     const el = document.querySelector('meta[name="description"]');
@@ -44,13 +46,50 @@ export default function MainApp() {
                 <span className="text-sm font-medium">AI Builder</span>
               </div>
             </header>
-            <div className="h-screen grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-              <div className="h-full">
-                <ChatScreen />
+            
+            {/* Desktop Layout */}
+            <div className="hidden md:block h-screen">
+              <div className="grid grid-cols-2 gap-4 p-4 h-full">
+                <div className="h-full">
+                  <ChatScreen />
+                </div>
+                <div className="h-full">
+                  <PreviewPanel />
+                </div>
               </div>
-              <div className="h-full hidden md:block">
-                <PreviewPanel />
+            </div>
+
+            {/* Mobile Layout with Bottom Tabs */}
+            <div className="md:hidden h-screen flex flex-col">
+              <div className="flex-1 overflow-hidden">
+                {activeTab === "chat" ? <ChatScreen /> : <PreviewPanel />}
               </div>
+              
+              {/* Bottom Navigation */}
+              <nav className="border-t bg-background/80 backdrop-blur-md p-4">
+                <div className="flex justify-center gap-8">
+                  <button
+                    onClick={() => setActiveTab("chat")}
+                    className={`flex flex-col items-center gap-1 px-6 py-2 rounded-lg transition-colors ${
+                      activeTab === "chat" 
+                        ? "bg-primary/10 text-primary" 
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <span className="text-sm font-medium">Chat</span>
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("preview")}
+                    className={`flex flex-col items-center gap-1 px-6 py-2 rounded-lg transition-colors ${
+                      activeTab === "preview" 
+                        ? "bg-primary/10 text-primary" 
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <span className="text-sm font-medium">Preview</span>
+                  </button>
+                </div>
+              </nav>
             </div>
           </main>
         </div>
