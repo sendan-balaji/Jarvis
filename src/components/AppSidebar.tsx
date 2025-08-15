@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import { Grid3X3, Search, Edit } from "lucide-react";
 import { useJarvis } from "@/jarvis/JarvisProvider";
 import { Link, useNavigate } from "react-router-dom";
@@ -25,10 +25,10 @@ export default function AppSidebar() {
   const handleNavigation = (action: string) => {
     switch (action) {
       case "newChat":
-        startNewChat();
+        navigate("/dev");
         break;
       case "devmode":
-        navigate("/devmode");
+        navigate("/dev");
         break;
       default:
         break;
@@ -39,11 +39,19 @@ export default function AppSidebar() {
     <Sidebar className="bg-background border-r">
       <SidebarHeader className="p-4">
         <div className="flex items-center gap-2 mb-4">
-          <div className="flex items-center gap-2 p-2 rounded-lg border bg-background hover:bg-muted/50 cursor-pointer w-full">
+          <div 
+            className="flex items-center gap-2 p-2 rounded-lg border bg-background hover:bg-muted/50 cursor-pointer w-full"
+            onClick={() => navigate("/dev")}
+          >
             <Search className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Search</span>
           </div>
-          <Button size="sm" variant="ghost" className="p-2">
+          <Button 
+            size="sm" 
+            variant="ghost" 
+            className="p-2"
+            onClick={() => navigate("/dev")}
+          >
             <Edit className="h-4 w-4" />
           </Button>
         </div>
